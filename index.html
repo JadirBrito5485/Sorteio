@@ -16,10 +16,13 @@
         .btn-loja-topo { background: var(--gold); color: #000; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 12px; text-transform: uppercase; display: inline-block; margin-top: 10px; }
 
         .container { max-width: 480px; margin: auto; padding: 15px; }
+        
+        /* ALERTA LOCALIDADE */
+        .local-badge { background: #ff0000; color: #fff; font-size: 10px; font-weight: 900; padding: 5px 15px; border-radius: 50px; display: inline-block; margin-bottom: 10px; text-transform: uppercase; }
+
         .card { background: var(--card); border-radius: 20px; padding: 25px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.8); position: relative; overflow: hidden; }
         img.prod-img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 1px solid #333; }
         
-        /* EXPLICAÇÃO DO SORTEIO */
         .passo-a-passo { display: flex; justify-content: space-between; margin-bottom: 25px; background: #000; padding: 15px; border-radius: 15px; border: 1px solid #222; }
         .passo { text-align: center; flex: 1; font-size: 10px; color: #aaa; }
         .passo i { color: var(--gold); font-size: 20px; margin-bottom: 5px; display: block; }
@@ -51,7 +54,6 @@
         .status-tag { background: rgba(37, 211, 102, 0.1); color: var(--green); font-size: 10px; padding: 4px 8px; border-radius: 6px; font-weight: 900; border: 1px solid rgba(37, 211, 102, 0.2); }
         .real-badge { color: var(--gold); margin-right: 5px; font-size: 11px; }
 
-        /* DESTAQUE FINAL DA LOJA */
         .footer-shop { text-align: center; margin-top: 40px; padding: 20px; background: #111; border-radius: 20px; border: 1px solid #333; }
         .footer-shop p { margin: 0 0 15px; font-size: 14px; color: #ccc; }
         .btn-visit { background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 12px 30px; border-radius: 10px; text-decoration: none; font-weight: 900; display: inline-block; transition: 0.3s; }
@@ -66,6 +68,10 @@
 </header>
 
 <div class="container">
+    <div style="text-align: center;">
+        <span class="local-badge"><i class="fas fa-map-marker-alt"></i> Exclusivo para Rio Negrinho - SC</span>
+    </div>
+
     <div class="card">
         <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-loh4miq61d8n7a.webp" class="prod-img">
         
@@ -75,23 +81,24 @@
         </div>
 
         <div class="passo-a-passo">
-            <div class="passo"><i class="fas fa-user-plus"></i><b>1. CADASTRE</b>Seu nome e CPF</div>
+            <div class="passo"><i class="fas fa-user-plus"></i><b>1. CADASTRE</b>Morador de RN</div>
             <div class="passo"><i class="fas fa-share-alt"></i><b>2. CONVIDE</b>Mande seu link</div>
-            <div class="passo"><i class="fas fa-trophy"></i><b>3. CONCORRA</b>Sorteio via IA</div>
+            <div class="passo"><i class="fas fa-trophy"></i><b>3. CONCORRA</b>Ganhe o Fone</div>
         </div>
         
         <div id="cadastroArea">
-            <div class="form-title"><i class="fas fa-edit"></i> Entre na lista oficial</div>
+            <div class="form-title"><i class="fas fa-edit"></i> Cadastro Obrigatório (RN)</div>
             <input type="text" id="nome" placeholder="Nome Completo">
             <input type="tel" id="cpf" placeholder="CPF (Apenas números)" maxlength="11">
-            <input type="tel" id="whats" placeholder="WhatsApp com DDD">
+            <input type="tel" id="whats" placeholder="WhatsApp (47)">
+            <p style="font-size: 11px; color: #ff0000; margin-top: -5px; margin-bottom: 10px; font-weight: bold;">* Válido apenas para residentes em Rio Negrinho - SC.</p>
             <button class="btn-gold" onclick="registrar()">ATIVAR MINHA VAGA</button>
         </div>
 
         <div id="linkArea" style="display:none; text-align:center; padding: 20px; background: rgba(212,175,55,0.05); border-radius: 15px; border: 1px dashed var(--gold);">
             <p style="color:var(--gold); font-weight:900; margin-top:0;">LINK GERADO! 🚀</p>
             <input type="text" id="inputLink" readonly style="background:#fff; color:#000; text-align: center; font-weight: bold;">
-            <p style="font-size:12px; color:#aaa; line-height: 1.4; margin-top: 10px;">Para validar sua vaga, envie este link para <b>1 amigo</b> se cadastrar após você!</p>
+            <p style="font-size:12px; color:#aaa; line-height: 1.4; margin-top: 10px;">Para validar sua vaga, envie este link para <b>1 amigo de Rio Negrinho</b> se cadastrar!</p>
         </div>
     </div>
 
@@ -104,9 +111,9 @@
     </div>
 
     <div class="footer-shop">
-        <p>Procurando eletrônicos com entrega rápida em Rio Negrinho?</p>
+        <p>Eletrônicos com entrega no mesmo dia em Rio Negrinho!</p>
         <a href="https://rionegrinho.shop" class="btn-visit" target="_blank">ACESSAR LOJA VIRTUAL</a>
-        <div style="margin-top: 15px; font-size: 11px; color: #444;">rionegrinho.shop</div>
+        <div style="margin-top: 15px; font-size: 11px; color: #444;">Apoie o comércio local: rionegrinho.shop</div>
     </div>
 </div>
 
@@ -170,7 +177,7 @@
             document.getElementById('inputLink').value = link;
             document.getElementById('cadastroArea').style.display = 'none';
             document.getElementById('linkArea').style.display = 'block';
-            alert("Cadastro Ativado! Agora use seu link para indicar amigos.");
+            alert("Cadastro Ativado! Sorteio exclusivo para Rio Negrinho.");
         } catch (e) { alert("Erro ao conectar com o servidor."); }
     }
 </script>
