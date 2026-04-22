@@ -11,19 +11,31 @@
     <style>
         :root { --gold: #d4af37; --dark: #050505; --card: #111; --green: #25d366; }
         body { font-family: 'Poppins', sans-serif; background: var(--dark); color: #fff; margin: 0; padding-bottom: 50px; }
-        header { background: #000; padding: 18px; text-align: center; border-bottom: 2px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        
+        header { background: #000; padding: 20px; text-align: center; border-bottom: 2px solid var(--gold); }
+        .btn-loja-topo { background: var(--gold); color: #000; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 12px; text-transform: uppercase; display: inline-block; margin-top: 10px; }
+
         .container { max-width: 480px; margin: auto; padding: 15px; }
         .card { background: var(--card); border-radius: 20px; padding: 25px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.8); position: relative; overflow: hidden; }
         img.prod-img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 1px solid #333; }
         
-        /* Formulário Estilizado */
+        /* EXPLICAÇÃO DO SORTEIO */
+        .passo-a-passo { display: flex; justify-content: space-between; margin-bottom: 25px; background: #000; padding: 15px; border-radius: 15px; border: 1px solid #222; }
+        .passo { text-align: center; flex: 1; font-size: 10px; color: #aaa; }
+        .passo i { color: var(--gold); font-size: 20px; margin-bottom: 5px; display: block; }
+        .passo b { color: #fff; display: block; font-size: 11px; }
+
+        .info-sorteio { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); border-radius: 12px; padding: 15px; margin-bottom: 20px; text-align: center; }
+        .info-sorteio h3 { margin: 0; color: var(--gold); font-size: 16px; text-transform: uppercase; }
+        .info-sorteio p { margin: 5px 0 0; font-size: 14px; color: #fff; font-weight: bold; }
+
         .form-title { font-size: 13px; color: var(--gold); text-transform: uppercase; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px; }
         input { width: 100%; padding: 15px; margin-bottom: 12px; border-radius: 12px; border: 1px solid #333; background: #000; color: #fff; box-sizing: border-box; font-size: 16px; }
         input:focus { border-color: var(--gold); outline: none; }
+        
         .btn-gold { background: linear-gradient(45deg, var(--gold), #f9e29c); color: #000; width: 100%; padding: 18px; border: none; border-radius: 12px; font-weight: 900; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .btn-gold:hover { transform: scale(1.02); box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4); }
 
-        /* Lista de Participantes */
         .lista-section { margin-top: 25px; background: var(--card); border-radius: 20px; padding: 20px; border: 1px solid #222; }
         .lista-header { color: var(--gold); font-size: 14px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
         .dot { height: 8px; width: 8px; background-color: var(--green); border-radius: 50%; display: inline-block; margin-right: 5px; animation: blink 1s infinite; }
@@ -39,31 +51,47 @@
         .status-tag { background: rgba(37, 211, 102, 0.1); color: var(--green); font-size: 10px; padding: 4px 8px; border-radius: 6px; font-weight: 900; border: 1px solid rgba(37, 211, 102, 0.2); }
         .real-badge { color: var(--gold); margin-right: 5px; font-size: 11px; }
 
-        .footer-shop { text-align: center; margin-top: 30px; font-size: 12px; color: #555; }
-        .footer-shop a { color: var(--gold); text-decoration: none; font-weight: bold; }
+        /* DESTAQUE FINAL DA LOJA */
+        .footer-shop { text-align: center; margin-top: 40px; padding: 20px; background: #111; border-radius: 20px; border: 1px solid #333; }
+        .footer-shop p { margin: 0 0 15px; font-size: 14px; color: #ccc; }
+        .btn-visit { background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 12px 30px; border-radius: 10px; text-decoration: none; font-weight: 900; display: inline-block; transition: 0.3s; }
+        .btn-visit:hover { background: var(--gold); color: #000; }
     </style>
 </head>
 <body>
 
-<header><div style="font-weight:900; letter-spacing: 2px;">RIO NEGRINHO SHOP</div></header>
+<header>
+    <div style="font-weight:900; letter-spacing: 2px; font-size: 20px;">RIO NEGRINHO SHOP</div>
+    <a href="https://rionegrinho.shop" class="btn-loja-topo" target="_blank">Visitar Loja Oficial</a>
+</header>
 
 <div class="container">
     <div class="card">
         <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-loh4miq61d8n7a.webp" class="prod-img">
-        <h2 style="text-align:center; margin:0 0 20px; font-weight:900; background: linear-gradient(to bottom, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SORTEIO FONE M10</h2>
+        
+        <div class="info-sorteio">
+            <h3>📢 DATA DO SORTEIO</h3>
+            <p>10 de Maio (Domingo) às 12:00h</p>
+        </div>
+
+        <div class="passo-a-passo">
+            <div class="passo"><i class="fas fa-user-plus"></i><b>1. CADASTRE</b>Seu nome e CPF</div>
+            <div class="passo"><i class="fas fa-share-alt"></i><b>2. CONVIDE</b>Mande seu link</div>
+            <div class="passo"><i class="fas fa-trophy"></i><b>3. CONCORRA</b>Sorteio via IA</div>
+        </div>
         
         <div id="cadastroArea">
-            <div class="form-title"><i class="fas fa-edit"></i> Cadastro Obrigatório</div>
+            <div class="form-title"><i class="fas fa-edit"></i> Entre na lista oficial</div>
             <input type="text" id="nome" placeholder="Nome Completo">
             <input type="tel" id="cpf" placeholder="CPF (Apenas números)" maxlength="11">
             <input type="tel" id="whats" placeholder="WhatsApp com DDD">
-            <button class="btn-gold" onclick="registrar()">OBTER MEU LINK DE SORTEIO</button>
+            <button class="btn-gold" onclick="registrar()">ATIVAR MINHA VAGA</button>
         </div>
 
         <div id="linkArea" style="display:none; text-align:center; padding: 20px; background: rgba(212,175,55,0.05); border-radius: 15px; border: 1px dashed var(--gold);">
-            <p style="color:var(--gold); font-weight:900; margin-top:0;">LINK GERADO COM SUCESSO! 🚀</p>
+            <p style="color:var(--gold); font-weight:900; margin-top:0;">LINK GERADO! 🚀</p>
             <input type="text" id="inputLink" readonly style="background:#fff; color:#000; text-align: center; font-weight: bold;">
-            <p style="font-size:12px; color:#aaa; line-height: 1.4;">Para ativar seu nome na lista abaixo, envie este link para <b>1 amigo</b> se cadastrar!</p>
+            <p style="font-size:12px; color:#aaa; line-height: 1.4; margin-top: 10px;">Para validar sua vaga, envie este link para <b>1 amigo</b> se cadastrar após você!</p>
         </div>
     </div>
 
@@ -72,12 +100,13 @@
             <span><span class="dot"></span> Participantes Ativos</span>
             <span id="contadorTotal" style="color:#fff; background: #222; padding: 2px 10px; border-radius: 10px;">0</span>
         </div>
-        <div class="scroll-lista" id="listaFinal">
-            </div>
+        <div class="scroll-lista" id="listaFinal"></div>
     </div>
 
     <div class="footer-shop">
-        Acesse nossa loja virtual: <a href="https://rionegrinho.shop">rionegrinho.shop</a>
+        <p>Procurando eletrônicos com entrega rápida em Rio Negrinho?</p>
+        <a href="https://rionegrinho.shop" class="btn-visit" target="_blank">ACESSAR LOJA VIRTUAL</a>
+        <div style="margin-top: 15px; font-size: 11px; color: #444;">rionegrinho.shop</div>
     </div>
 </div>
 
@@ -94,7 +123,6 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
-    // 1. GERADOR DE FILA COM STATUS "ATIVO"
     const nomesF = ["Ricardo", "Ana", "Marcos", "Juliana", "Thiago", "Patrícia", "Fernando", "Camila", "Bruno", "Larissa", "Rafael", "Amanda", "Diego", "Bianca", "Rodrigo", "Vanessa", "Carlos", "Fernanda", "Gabriel", "Luciana"];
     const sobrenomesF = ["Silva", "Oliveira", "Costa", "Lima", "Santos", "Rocha", "Alves", "Ferreira", "Mendes", "Borges", "Castro", "Nunes", "Pires", "Guedes", "Schroeder", "Brito", "Zimmermann"];
 
@@ -110,20 +138,13 @@
 
     const filaFake = gerarFilaFake();
 
-    // 2. BUSCAR REAIS E EXIBIR TUDO COMO ATIVO
     db.collection("participantes").onSnapshot((snapshot) => {
         const listaDiv = document.getElementById('listaFinal');
         listaDiv.innerHTML = "";
         let reais = [];
-        
-        snapshot.forEach(doc => { 
-            // Mostra apenas os nomes reais que já estão no banco
-            reais.push({ nome: doc.data().nome, real: true }); 
-        });
-
+        snapshot.forEach(doc => { reais.push({ nome: doc.data().nome, real: true }); });
         const listaCompleta = [...reais, ...filaFake];
         document.getElementById('contadorTotal').innerText = listaCompleta.length;
-
         listaCompleta.forEach(p => {
             listaDiv.innerHTML += `
                 <div class="user-row">
@@ -140,9 +161,7 @@
         const nome = document.getElementById('nome').value;
         const cpf = document.getElementById('cpf').value;
         const whats = document.getElementById('whats').value;
-        
-        if(!nome || !cpf || !whats) return alert("Preencha todos os campos corretamente!");
-
+        if(!nome || !cpf || !whats) return alert("Preencha todos os campos!");
         try {
             await db.collection("participantes").doc(cpf).set({
                 nome: nome, whats: whats, vagaAtiva: true, data: firebase.firestore.FieldValue.serverTimestamp()
@@ -151,8 +170,6 @@
             document.getElementById('inputLink').value = link;
             document.getElementById('cadastroArea').style.display = 'none';
             document.getElementById('linkArea').style.display = 'block';
-            
-            // Alerta de sucesso
             alert("Cadastro Ativado! Agora use seu link para indicar amigos.");
         } catch (e) { alert("Erro ao conectar com o servidor."); }
     }
