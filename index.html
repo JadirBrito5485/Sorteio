@@ -17,12 +17,19 @@
 
         .container { max-width: 480px; margin: auto; padding: 15px; }
         
-        /* ALERTA LOCALIDADE */
         .local-badge { background: #ff0000; color: #fff; font-size: 10px; font-weight: 900; padding: 5px 15px; border-radius: 50px; display: inline-block; margin-bottom: 10px; text-transform: uppercase; }
 
         .card { background: var(--card); border-radius: 20px; padding: 25px; border: 1px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.8); position: relative; overflow: hidden; }
         img.prod-img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 1px solid #333; }
         
+        /* CHAMADA PRÓXIMO SORTEIO - ABAIXO DO FORMULÁRIO */
+        .proximo-sorteio-box { background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--gold); border-radius: 15px; padding: 15px; margin-top: 20px; text-align: center; }
+        .proximo-sorteio-box span { font-size: 10px; color: var(--gold); text-transform: uppercase; font-weight: bold; }
+        .proximo-sorteio-box h4 { margin: 5px 0; font-size: 18px; color: #fff; }
+        .proximo-sorteio-box b { color: var(--green); }
+
+        .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 13px; display: inline-block; margin-top: 10px; }
+
         .passo-a-passo { display: flex; justify-content: space-between; margin-bottom: 25px; background: #000; padding: 15px; border-radius: 15px; border: 1px solid #222; }
         .passo { text-align: center; flex: 1; font-size: 10px; color: #aaa; }
         .passo i { color: var(--gold); font-size: 20px; margin-bottom: 5px; display: block; }
@@ -76,7 +83,7 @@
         <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-loh4miq61d8n7a.webp" class="prod-img">
         
         <div class="info-sorteio">
-            <h3>📢 DATA DO SORTEIO</h3>
+            <h3>📢 DATA DO SORTEIO ATUAL</h3>
             <p>10 de Maio (Domingo) às 12:00h</p>
         </div>
 
@@ -100,6 +107,14 @@
             <input type="text" id="inputLink" readonly style="background:#fff; color:#000; text-align: center; font-weight: bold;">
             <p style="font-size:12px; color:#aaa; line-height: 1.4; margin-top: 10px;">Para validar sua vaga, envie este link para <b>1 amigo de Rio Negrinho</b> se cadastrar!</p>
         </div>
+
+        <div class="proximo-sorteio-box">
+            <span>🔥 Fique de olho</span>
+            <h4>Próximo Sorteio: <b>R$ 300,00</b></h4>
+            <a href="https://www.instagram.com/portalfalabrito/" class="btn-insta" target="_blank">
+                <i class="fab fa-instagram"></i> Seguir @portalfalabrito
+            </a>
+        </div>
     </div>
 
     <div class="lista-section">
@@ -113,7 +128,7 @@
     <div class="footer-shop">
         <p>Eletrônicos com entrega no mesmo dia em Rio Negrinho!</p>
         <a href="https://rionegrinho.shop" class="btn-visit" target="_blank">ACESSAR LOJA VIRTUAL</a>
-        <div style="margin-top: 15px; font-size: 11px; color: #444;">Apoie o comércio local: rionegrinho.shop</div>
+        <div style="margin-top: 15px; font-size: 11px; color: #444;">Siga o canal de notícias: portalfalabrito</div>
     </div>
 </div>
 
