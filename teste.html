@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORTEIO VIP - RIO NEGRINHO SHOP</title>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --text-gray: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 0 15px 50px;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid #222;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .product-header {
+            position: relative;
+        }
+
+        .product-img {
+            width: 100%;
+            display: block;
+        }
+
+        .countdown-strip {
+            background: var(--gold);
+            color: #000;
+            font-weight: 900;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin: 0 0 10px;
+            text-align: center;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .how-it-works {
+            margin: 25px 0;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .step-num {
+            background: var(--gold);
+            color: #000;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .form-area {
+            margin-top: 30px;
+        }
+
+        input {
+            width: 100%;
+            background: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, var(--gold), #f9e29c);
+            color: #000;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .success-box {
+            display: none;
+            background: #002b1a;
+            border: 1px solid #00ff8c;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .referral-link-display {
+            background: #fff;
+            color: #000;
+            padding: 12px;
+            border-radius: 8px;
+            word-break: break-all;
+            margin: 15px 0;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .footer-shop {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-gray);
+            font-size: 12px;
+        }
+
+        .footer-shop a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="https://rionegrinho.shop" class="logo">RIO NEGRINHO SHOP</a>
+</header>
+
+<div class="container">
+    <div class="main-card">
+        <div class="product-header">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-loh4miq61d8n7a.webp" class="product-img" alt="Fone Bluetooth M10">
+            <div class="countdown-strip">Sorteio: 10 de Maio - 12:00h</div>
+        </div>
+
+        <div class="content">
+            <h1>Ganhe este Fone M10</h1>
+            
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">Faça seu cadastro oficial abaixo.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">Envie seu link exclusivo para 1 amigo.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">Quando ele cadastrar, você entra na lista!</div>
+                </div>
+            </div>
+
+            <div id="registroForm">
+                <input type="text" id="nome" placeholder="Nome Completo">
+                <input type="tel" id="cpf" placeholder="CPF (Apenas números)" maxlength="11">
+                <input type="tel" id="whats" placeholder="WhatsApp (DDD)">
+                <button class="btn-submit" onclick="executarCadastro()">PARTICIPAR AGORA</button>
+            </div>
+
+            <div id="sucessoArea" class="success-box">
+                <h3 style="margin:0; color:#00ff8c;">QUASE LÁ! 🚀</h3>
+                <p style="font-size:14px;">Copie o link abaixo e mande para um amigo. Sua vaga será confirmada assim que ele se cadastrar!</p>
+                <div class="referral-link-display" id="linkGerado"></div>
+                <button class="btn-submit" style="background:#fff;" onclick="copiarLink()">COPIAR LINK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-shop">
+        O melhor em eletrônicos de Rio Negrinho.<br>
+        Visite nossa loja: <a href="https://rionegrinho.shop">rionegrinho.shop</a>
+    </div>
+</div>
+
+<script>
+    // CONFIGURAÇÃO FIREBASE
+    const firebaseConfig = {
+        apiKey: "AIzaSyDLHZwaj72-i3M6BgrEmaT9ev2t6rGjJwU",
+        authDomain: "app-web-bbd49.firebaseapp.com",
+        projectId: "app-web-bbd49",
+        storageBucket: "app-web-bbd49.firebasestorage.app",
+        messagingSenderId: "881365161427",
+        appId: "1:881365161427:web:1755ce21c9c231f10d4b26"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const params = new URLSearchParams(window.location.search);
+    const refID = params.get('ref');
+
+    async function executarCadastro() {
+        const nome = document.getElementById('nome').value;
+        const cpf = document.getElementById('cpf').value;
+        const whats = document.getElementById('whats').value;
+
+        if(!nome || !cpf || !whats) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        try {
+            const docRef = await db.collection("participantes").doc(cpf).get();
+            if(docRef.exists) {
+                alert("Você já está cadastrado!");
+                mostrarAreaSucesso(cpf);
+                return;
+            }
+
+            await db.collection("participantes").doc(cpf).set({
+                nome: nome,
+                whats: whats,
+                vagaAtiva: false,
+                data: firebase.firestore.FieldValue.serverTimestamp()
+            });
+
+            if (refID) {
+                await db.collection("participantes").doc(refID).update({ vagaAtiva: true });
+            }
+
+            mostrarAreaSucesso(cpf);
+
+        } catch (e) {
+            alert("Erro ao cadastrar. Verifique sua conexão.");
+        }
+    }
+
+    function mostrarAreaSucesso(cpf) {
+        const link = window.location.href.split('?')[0] + "?ref=" + cpf;
+        document.getElementById('linkGerado').innerText = link;
+        document.getElementById('registroForm').style.display = 'none';
+        document.getElementById('sucessoArea').style.display = 'block';
+    }
+
+    function copiarLink() {
+        const link = document.getElementById('linkGerado').innerText;
+        navigator.clipboard.writeText(link);
+        alert("Link copiado com sucesso! Agora mande para seus amigos.");
+    }
+</script>
+
+</body>
+</html>
